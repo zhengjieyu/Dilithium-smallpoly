@@ -8,7 +8,7 @@ Authors:
  - Chenxi Xue`<cxxue21@m.fudan.edu.cn>` 
  - Yunlei Zhao `<ylzhao@fudan.edu.cn>`
 
-It contains our source code for Dilithium with parallel small polynomial multiplication algorithm optimized for both C reference implementation and Arm Cortex-A72 neon implementation.
+It contains our source code for Dilithium with parallel small polynomial multiplication algorithm（the algorithm 9 in subsection 3.3 of paper) optimized for both C reference implementation and Arm Cortex-A72 neon implementation. We use the codes for evaluation in section 5.
 
 # Installation
 ## Cloning the code
