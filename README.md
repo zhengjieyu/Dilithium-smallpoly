@@ -1,4 +1,4 @@
-This repository accompanies the paper **Parallel Small Polynomial Multiplication for Dilithium: A Faster Design and Implementation** accepted by ACSAC22.
+This repository contains scripts and instruction for reproducing the experiments in our ACSAC22 paper  **Parallel Small Polynomial Multiplication for Dilithium: A Faster Design and Implementation**.
 
 
 Authors: 
@@ -10,7 +10,18 @@ Authors:
 
 It contains our source code for Dilithium with parallel small polynomial multiplication algorithm（the algorithm 9 in subsection 3.3 of paper) optimized for both C reference implementation and Arm Cortex-A72 neon implementation. We use the codes for evaluation in section 5.
 
+[TOC]
+
+```bash
+> tree .
+├── Arm_Neon_implementation                    
+├── C_reference_implementation
+│   ├── Dilithium2-smallpoly
+│   ├── Dilithium3-smallpoly          
+│   ├── Dilithium5-smallpoly
+```
 # Installation
+
 ## Cloning the code
 Clone the code 
 
@@ -20,11 +31,21 @@ git clone https://github.com/zhengjieyu/Dilithium-smallpoly.git
 
 ## C reference implementation code
 
-We have tested this code on an Intel(R) Core(TM) i7-10510U CPU at 2.3GHz(16 GB memory) with TurBo Boost and Hyperthreading disabled. The operating system is Ubuntu 20.04 LTS with Linux Kernel 4.4.0 and the gcc version is 9.4.0.
+### Hardware Configuration
 
-Before running the code, you should install openssl. For linux, you can install openssl by this instruction
+- Intel(R) Core(TM) i7-10510U CPU at 2.3GHz(16 GB memory) with TurBo Boost and Hyperthreading disabled. 
 
+### Software Version
+- Ubuntu 20.04 LTS with Linux Kernel 4.4.0
+- gcc  9.4.0
+- openssl
+### Install GCC
 
+```
+sudo apt-get update
+sudo apt-get install gcc-9
+```
+### Install openssl
 ```
 sudo apt-get install openssl
 sudo apt-get install libssl-dev
@@ -42,14 +63,35 @@ test/test_dilithium3
 test/test_speed3
 ```
 The first executable is used for verifying correctness of code, the second is for benchmark.
+
+Run 
+
+```
+./test/test_dilithium3
+./test/test_speed3
+```
+to see the tests results
 ## Arm neon implementation code
 
-We have tested this code with a Raspberry Pi 4B (RPi  4 Model B) with ARMv8-A instruction sets, Cortex-A72(1.8 GHz) CPU and 4GB RAM, it also supports ARMv8-A Neon SIMD instructions, running Ubuntu 10.3.0.
+### Hardware configuration
+
+- Raspberry Pi 4B (RPi  4 Model B) with ARMv8-A instruction sets, Cortex-A72(1.8 GHz) CPU and 4GB RAM, it also supports ARMv8-A Neon SIMD instructions.
+
+### Software Version
+- Ubuntu 10.3.0.
+- gcc 10.3.0
+- openssl
 It is essential that you are running a 64-bit OS to be able to execute aarch64 code.
 The 64-bit Raspbian OS can be used, but we have not tested all code with it.
 
+### Install GCC
+
+```
+sudo apt-get install gcc-10 g++-10
+```
+
 The Makefiles included in this repo assume that you are natively compiling your
-code using gcc. We have tested it with gcc 10.3.0.
+code using gcc. 
 
 ### Enable access to the cycle counter
 
@@ -88,6 +130,17 @@ test/test_dilithium3
 test/test_dilithium5
 ```
 The first three executables are used for benchmark, the following three executables are used for verifying correctness of code.
+Run 
+
+```
+./test/test_speed2_test2
+./test/test_speed3_test2
+./test/test_speed5_test2
+./test/test_dilithium2
+./test/test_dilithium3
+./test/test_dilithium5
+```
+to see the tests results.
 # License
 
 This repository includes code from other sources that has the following license/license waivers
