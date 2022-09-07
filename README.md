@@ -10,14 +10,6 @@ Authors:
 
 It contains our source code for Dilithium with parallel small polynomial multiplication algorithm（the algorithm 9 in subsection 3.3 of paper) optimized for both C reference implementation and Arm Cortex-A72 neon implementation. We use the codes for evaluation in section 5.
 
-```bash
-> tree .
-├── Arm_Neon_implementation                    
-├── C_reference_implementation
-│   ├── Dilithium2-smallpoly
-│   ├── Dilithium3-smallpoly          
-│   ├── Dilithium5-smallpoly
-```
 # Installation
 
 ## Cloning the code
