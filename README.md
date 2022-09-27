@@ -83,25 +83,7 @@ sudo apt-get install gcc-10 g++-10
 The Makefiles included in this repo assume that you are natively compiling your
 code using gcc. 
 
-### Enable access to the cycle counter
 
-For accurate benchmarking on Cortex-A72, we make use of the performance counters.
-By default the access from user mode is disabled. You will need to enable it using a kernel module.
-
-We have included on here that you can install
-```
-cd enable_ccr
-make install
-```
-
-Alternatively, you can get one from: https://github.com/rdolbeau/enable_arm_pmu.
-
-You may have to install the kernel headers manually:
-https://www.raspberrypi.com/documentation/computers/linux_kernel.html
-
-```
-sudo apt install raspberrypi-kernel-headers
-```
 
 ## Benchmarking on Cortex-A72
 To compile the test programs, go to the Arm_Neon_implementation directory, run
