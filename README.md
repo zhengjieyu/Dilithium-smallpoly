@@ -68,7 +68,7 @@ to see the tests results
 - Raspberry Pi 4B (RPi  4 Model B) with ARMv8-A instruction sets, Cortex-A72(1.8 GHz) CPU and 4GB RAM, it also supports ARMv8-A Neon SIMD instructions.
 
 ### Software Version
-- Ubuntu 10.3.0.
+- Ubuntu 21.04
 - gcc 10.3.0
 - openssl
 It is essential that you are running a 64-bit OS to be able to execute aarch64 code.
