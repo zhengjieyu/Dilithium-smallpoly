@@ -102,7 +102,7 @@ test/test_dilithium3
 test/test_dilithium5
 ```
 The first three executables are used for benchmark, the following three executables are used for verifying correctness of code.
-Run 
+Please run under root permission to get the correct speed results.
 
 ```
 ./test/test_speed2_test2
