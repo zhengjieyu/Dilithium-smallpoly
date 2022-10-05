@@ -88,8 +88,8 @@ code using gcc.
 ## Benchmarking on Cortex-A72
 To compile the test programs, go to the Arm_Neon_implementation directory, run
 ```
-make speed 
-make all
+sudo make speed 
+sudo make all
 ```
 This produces the executables 
 
@@ -102,15 +102,15 @@ test/test_dilithium3
 test/test_dilithium5
 ```
 The first three executables are used for benchmark, the following three executables are used for verifying correctness of code.
-Please run under root permission to get the correct speed results.
+Run
 
 ```
-./test/test_speed2_test2
-./test/test_speed3_test2
-./test/test_speed5_test2
-./test/test_dilithium2
-./test/test_dilithium3
-./test/test_dilithium5
+sudo ./test/test_speed2_test2
+sudo ./test/test_speed3_test2
+sudo ./test/test_speed5_test2
+sudo ./test/test_dilithium2
+sudo ./test/test_dilithium3
+sudo ./test/test_dilithium5
 ```
 to see the tests results.
 # License
